@@ -33,7 +33,7 @@ function setup() {
 
     mb = createSprite(random(20, 570), 50, 30, 30);
     mb.shapeColor = "white";
-    mb.setVelocity(4, 5);
+    mb.setVelocity(-4, 5);
 
 }
 
@@ -41,10 +41,6 @@ function draw() {
     background(200);
 
     //create edgeSprite
-    // mb.bounceOff(box1);
-    // mb.bounceOff(box2);
-    // mb.bounceOff(box3);
-    // mb.bounceOff(box4);
     mb.bounceOff(rightEdge);
     mb.bounceOff(leftEdge);
     mb.bounceOff(topEdge);
@@ -54,21 +50,15 @@ function draw() {
     //add condition to check if box touching surface and make it box
 
     if (box1.isTouching(mb) && mb.bounceOff(box1)) {
-        // music.play();
         mb.shapeColor = ("blue");
-        // mb.setVelocity(0, 0);
     } else if (box2.isTouching(mb) && mb.bounceOff(box2)) {
-        // music.play();
         mb.shapeColor = ("green");
-        // mb.setVelocity(0, 0);
     } else if (box3.isTouching(mb) && mb.bounceOff(box3)) {
-        // music.play();
         mb.shapeColor = ("red");
         mb.setVelocity(0, 0);
     } else if (box4.isTouching(mb) && mb.bounceOff(box4)) {
         music.play();
         mb.shapeColor = ("yellow");
-        // mb.setVelocity(0, 0);
     }
 
     drawSprites();
